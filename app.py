@@ -30,9 +30,26 @@ if __name__ == "__main__":
     bid_btc.append(int(bitflyer["best_bid"]))
     print("BTC_JP Bid: " + "{:,d}".format(bid_btc[i]) + "円")
     o = "{:,d}".format(bid_btc[i])
+    l={
+        "coincheck": {
+            "name": "coincheck",
+            "tuka":"Bit coin",
+            "price":"coincheck[last]"
+        },
+        "bitflyer":{
+            "name": "bitflyer",
+            "tuka": "Bit coin",
+            "price": "{:,d}".format(bid_btc[i])
+        },
+        "zaif": {
+            "name": "zaif",
+            "tuka": "Bit coin",
+            "price": "zaif[last]"
+        }
+    }
     #print(json.dumps(o))
 
-    return json.dumps(o)
+    return json.dumps(l)
 
 
   @get("/dict")
