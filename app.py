@@ -34,7 +34,7 @@ if __name__ == "__main__":
         "coincheck": {
             "name": "coincheck",
             "tuka":"Bit coin",
-            "price":"coincheck['last']"
+            "price":"coincheck[/'last/']"
         },
         "bitflyer":{
             "name": "bitflyer",
