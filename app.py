@@ -26,7 +26,7 @@ if __name__ == "__main__":
     coincheck = requests.get(URL).json()
     bitflyer = res.json()
     print(zaif['last'])
-    print(coincheck["last"])
+    print(coincheck['last'])
     bid_btc.append(int(bitflyer["best_bid"]))
     print("BTC_JP Bid: " + "{:,d}".format(bid_btc[i]) + "円")
     o = "{:,d}".format(bid_btc[i])
