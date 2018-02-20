@@ -4,27 +4,29 @@ import collections, json
 import requests
 
 URL = 'https://coincheck.com/api/ticker'
+URL2='https://coincheck.com/api/rate/btc_jpy'
 API ="https://api.bitflyer.jp/v1/ticker"
+API2 ="https://api.bitflyer.jp/v1/ticker?product_code_JPY"
 url ="https://api.zaif.jp/api/1/ticker/btc_jpy"
+
+
 
 if __name__ == "__main__":
   store = collections.defaultdict(str)
   
   @get("/")
   def _alive():
+    coincheck = requests.get(URL).json()
+    coincheck2 = requests.get(URL2).json()
+    print(coincheck2)
+    bitflyer = requests.get(API).json()
+    bitflyer2 = requests.get(API2).json()
+    print(bitflyer2['best_bid'])
     zaif = requests.get(url).json()
 
-    print(zaif)
-    i = 0
-   # zaif = ZaifPublicApi()
-   # print(zaif.last_price('btc_jpy'))
-    #zaif = ZaifTradeApi(key, secret)
-   # print(zaif.get_info())
 
+    i = 0
     bid_btc = []
-    res = requests.get(API)
-    coincheck = requests.get(URL).json()
-    bitflyer = res.json()
     print(zaif['last'])
     print(coincheck['last'])
     bid_btc.append(int(bitflyer["best_bid"]))
@@ -44,7 +46,7 @@ if __name__ == "__main__":
         "zaif": {
             "name": "zaif",
             "tuka": "Bit coin",
-            "price": "zaif[last]"
+            "price": "zaif[¥"last¥"]"
         }
     }
     #print(json.dumps(o))
