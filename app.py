@@ -75,7 +75,43 @@ if __name__ == "__main__":
       return json.dumps(l)
 
 
+  @get("/coincheck")
+  def _dict():
+      coincheck = requests.get(URL).json()
+      print(coincheck)
+      co = coincheck['last']
+      l = {
+          "name": "coincheck",
+          "tuka": "Bit coin",
+          "price": co
+      }
+      return json.dumps(l)
 
+
+  @get("/Coincheck")
+  def _dict():
+      coincheck = requests.get(URL).json()
+      print(coincheck)
+      co = coincheck['last']
+      l = {
+          "name": "coincheck",
+          "tuka": "Bit coin",
+          "price": co
+      }
+      return json.dumps(l)
+
+
+  @get("/coin")
+  def _dict():
+      coincheck = requests.get(URL).json()
+      print(coincheck)
+      co = coincheck['last']
+      l = {
+          "name": "coincheck",
+          "tuka": "Bit coin",
+          "price": co
+      }
+      return json.dumps(l)
   @get("/bit")
   def _add():
       i = 0
