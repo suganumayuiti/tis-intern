@@ -31,12 +31,16 @@ if __name__ == "__main__":
     print(coincheck['last'])
     bid_btc.append(int(bitflyer["best_bid"]))
     print("BTC_JP Bid: " + "{:,d}".format(bid_btc[i]) + "円")
+    co=coincheck['last']
     o = "{:,d}".format(bid_btc[i])
+    zai=zaif['last']
+   # jsonString = '''
     l={
         "coincheck": {
+
             "name": "coincheck",
             "tuka":"Bit coin",
-            "price":"coincheck[/'last/']"
+            "price":co
         },
         "bitflyer":{
             "name": "bitflyer",
@@ -46,11 +50,10 @@ if __name__ == "__main__":
         "zaif": {
             "name": "zaif",
             "tuka": "Bit coin",
-            "price": "zaif[¥"last¥"]"
+            "price": zai
         }
     }
-    #print(json.dumps(o))
-
+  # data = json.loads(jsonString)
     return json.dumps(l)
 
 
