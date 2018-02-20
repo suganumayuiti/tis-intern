@@ -112,7 +112,7 @@ if __name__ == "__main__":
           "price": co
       }
       return json.dumps(l)
-  @get("/bit")
+  @get("/bitflyer")
   def _add():
       i = 0
       bid_btc = []
@@ -137,6 +137,30 @@ if __name__ == "__main__":
 
       }
       return json.dumps(l)
+
+  @get("/bit")
+  def _dict():
+      i = 0
+      bid_btc = []
+      bitflyer = requests.get(API).json()
+      bid_btc.append(int(bitflyer["best_bid"]))
+      zaif = requests.get(url).json()
+      zai = zaif['last']
+      coincheck = requests.get(URL).json()
+      co = coincheck['last']
+      l={
+          "nameco": "coincheck",
+          "priceco": co,
+          "namezai": "zaif",
+          "pricezai": zai,
+          "namebit": "bitflyer",
+          "pricebit": "{:,d}".format(bid_btc[i])
+
+      }
+      return json.dumps(l)
+
+
+
 
 run(host="0.0.0.0", port=8080)
 
