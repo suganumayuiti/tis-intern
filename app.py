@@ -36,18 +36,18 @@ if __name__ == "__main__":
     zai=zaif['last']
    # jsonString = '''
     l={
-        "coincheck": {
+        "co": {
 
             "name": "coincheck",
             "tuka":"Bit coin",
             "price":co
         },
-        "bitflyer":{
+        "bit":{
             "name": "bitflyer",
             "tuka": "Bit coin",
             "price": "{:,d}".format(bid_btc[i])
         },
-        "zaif": {
+        "zai": {
             "name": "zaif",
             "tuka": "Bit coin",
             "price": zai
